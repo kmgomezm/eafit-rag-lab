@@ -114,6 +114,24 @@ def cosine_sim_score(query: str, fragments: list[str]) -> float:
     return float(np.mean(scores))
 
 
+def lexical_diversity(text: str) -> float:
+    """Type-Token Ratio: palabras unicas / total palabras."""
+    words = text.lower().split()
+    if not words:
+        return 0.0
+    return round(len(set(words)) / len(words), 4)
+
+
+def count_words(text: str) -> int:
+    return len(text.split())
+
+
+def tokens_per_second(text: str, elapsed: float) -> float:
+    """Estimacion: ~1.3 tokens por palabra en espanol."""
+    tokens = count_words(text) * 1.3
+    return round(tokens / elapsed, 1) if elapsed > 0 else 0.0
+
+
 def llm_simple(query: str, llm: ChatGroq) -> tuple[str, float]:
     start = time.time()
     response = llm.invoke([HumanMessage(content=query)])
