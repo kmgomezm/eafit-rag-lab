@@ -34,8 +34,8 @@ with st.sidebar:
 
     model_name = st.selectbox(
         "Model Select",
-        ["llama3-70b-8192", "mixtral-8x7b-32768"],
-        help="Llama-3-70b vs Mixtral-8x7b"
+        ["llama-3.3-70b-versatile", "llama-3.1-8b-instant"],
+        help="Llama-3.3-70b vs Llama-3.1-8b"
     )
 
     temperature = st.slider("Temperature", 0.0, 1.0, 0.2, 0.05)
