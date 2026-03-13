@@ -4,6 +4,8 @@ langchain-groq
 faiss-cpu
 PyPDF2
 sentence-transformers
+scikit-learn
+langchain-core
 langchain-text-splitters
 langchain-community
 langchain-huggingface
